@@ -5,42 +5,568 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuvraj Men's Parlor | Premium Grooming & Styling</title>
     <meta name="description" content="Experience premium grooming, classic cuts, and modern styling at Yuvraj Men's Parlor. Your trusted expert for men's grooming.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: { dark: '#0f172a', light: '#1e293b', gold: '#d97706', goldhover: '#b45309', text: '#f8fafc' }
+                        brand: {
+                            dark: '#0f172a',    // Slate 900
+                            light: '#1e293b',   // Slate 800
+                            gold: '#d97706',    // Amber 600
+                            goldhover: '#b45309', // Amber 700
+                            text: '#f8fafc'     // Slate 50
+                        }
                     },
-                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
                 }
             }
         }
     </script>
+
     <style>
+        /* Custom Styles for things Tailwind doesn't cover easily */
         .hero-bg {
             background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=2074');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        .service-card:hover .service-icon { transform: scale(1.1) rotate(5deg); transition: transform 0.3s ease; }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            transition: transform 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-brand-dark text-brand-text font-sans antialiased selection:bg-brand-gold selection:text-white">
-<nav class="fixed w-full z-50 transition-all duration-300 bg-brand-dark/95 backdrop-blur-sm border-b border-gray-800" id="navbar"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-20"><div class="flex-shrink-0 flex items-center"><a href="#home" class="font-serif text-2xl font-bold tracking-wider text-white">YUVRAJ <span class="text-brand-gold">PARLOR</span></a></div><div class="hidden md:flex items-center space-x-8"><a href="#home" class="text-gray-300 hover:text-brand-gold transition px-3 py-2 text-sm font-medium">Home</a><a href="#about" class="text-gray-300 hover:text-brand-gold transition px-3 py-2 text-sm font-medium">About</a><a href="#services" class="text-gray-300 hover:text-brand-gold transition px-3 py-2 text-sm font-medium">Services</a><a href="#testimonials" class="text-gray-300 hover:text-brand-gold transition px-3 py-2 text-sm font-medium">Reviews</a><a href="#contact" class="bg-brand-gold hover:bg-brand-goldhover text-white px-5 py-2.5 rounded-md font-medium transition duration-300 ease-in-out transform hover:-translate-y-0.5">Book Now</a></div><div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2"><i class="fas fa-bars text-2xl"></i></button></div></div></div><div id="mobile-menu" class="hidden md:hidden bg-brand-light border-b border-gray-700 absolute w-full left-0 top-20 shadow-xl"><div class="px-4 pt-2 pb-6 space-y-2"><a href="#home" class="mobile-link block px-3 py-3 text-base font-medium text-gray-300 hover:text-brand-gold hover:bg-brand-dark rounded-md">Home</a><a href="#about" class="mobile-link block px-3 py-3 text-base font-medium text-gray-300 hover:text-brand-gold hover:bg-brand-dark rounded-md">About</a><a href="#services" class="mobile-link block px-3 py-3 text-base font-medium text-gray-300 hover:text-brand-gold hover:bg-brand-dark rounded-md">Services</a><a href="#testimonials" class="mobile-link block px-3 py-3 text-base font-medium text-gray-300 hover:text-brand-gold hover:bg-brand-dark rounded-md">Reviews</a><a href="#contact" class="mobile-link block px-3 py-3 mt-4 text-base font-medium text-center bg-brand-gold text-white rounded-md">Book Appointment</a></div></div></nav>
-<section id="home" class="hero-bg h-screen flex items-center justify-center pt-20"><div class="text-center px-4 max-w-4xl mx-auto" style="opacity: 0; animation: fadeIn 1s ease-out forwards;"><p class="text-brand-gold font-semibold tracking-widest uppercase mb-4 text-sm md:text-base">Mastering the Art of Grooming</p><h1 class="font-serif text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">Refine Your Style at <br/><span class="text-brand-gold">Yuvraj Men's Parlor</span></h1><p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">Premium grooming, classic cuts, and modern styling tailored for the modern man. Experience craftsmanship you can trust.</p><div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6"><a href="#services" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white rounded transition duration-300 text-lg font-medium">Explore Services</a><a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-brand-gold hover:bg-brand-goldhover text-white rounded transition duration-300 text-lg font-medium shadow-lg shadow-brand-gold/30"><i class="fab fa-whatsapp mr-2"></i> Book via WhatsApp</a></div></div></section>
-<section id="about" class="py-24 bg-brand-dark"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"><div class="relative"><div class="absolute -inset-4 border-2 border-brand-gold/30 rounded-lg transform translate-x-4 translate-y-4"></div><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800" alt="Barber at work" class="relative rounded-lg shadow-2xl z-10 w-full object-cover h-[500px]"></div><div><h2 class="text-brand-gold font-semibold tracking-widest uppercase mb-2">Our Story</h2><h3 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Where Tradition Meets Modern Flair.</h3><p class="text-gray-400 text-lg mb-6 leading-relaxed">At Yuvraj Men's Parlor, we don't just cut hair; we craft confidence. Founded with a passion for precise grooming and exceptional service, we blend classic barbering techniques with contemporary styling trends.</p><p class="text-gray-400 text-lg mb-8 leading-relaxed">Our team of expert stylists treats every client as a canvas, ensuring you walk out looking sharp and feeling your absolute best. We speak like trusted experts, prioritizing your personal style above all else.</p><div class="flex items-center gap-4"><div class="w-12 h-1 bg-brand-gold"></div><p class="text-white font-serif text-xl italic">"Sharp looks for sharp minds."</p></div></div></div></div></section>
-<section id="services" class="py-24 bg-brand-light"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center max-w-3xl mx-auto mb-16"><h2 class="text-brand-gold font-semibold tracking-widest uppercase mb-2">What We Offer</h2><h3 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Premium Grooming Services</h3><p class="text-gray-400 text-lg">Detailed attention and expert execution for all your grooming needs.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group"><div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition"><i class="fas fa-cut text-2xl text-brand-gold service-icon"></i></div><h4 class="text-xl font-bold text-white mb-3 font-serif">Classic & Modern Haircuts</h4><p class="text-gray-400 mb-4 line-clamp-3">From timeless traditional cuts to the latest fades and textured styles, customized perfectly for your head shape and hair type.</p></div><div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group"><div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition"><i class="fas fa-magic text-2xl text-brand-gold service-icon"></i></div><h4 class="text-xl font-bold text-white mb-3 font-serif">Beard Trimming & Shaping</h4><p class="text-gray-400 mb-4 line-clamp-3">Precision beard sculpting, hot towel straight razor shaves, and line-ups to keep your facial hair looking sharp and healthy.</p></div><div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group"><div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition"><i class="fas fa-spa text-2xl text-brand-gold service-icon"></i></div><h4 class="text-xl font-bold text-white mb-3 font-serif">Head Massage & Spa</h4><p class="text-gray-400 mb-4 line-clamp-3">Relaxing head, neck, and shoulder massages designed to relieve stress, paired with deep-conditioning hair spa treatments.</p></div><div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group"><div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition"><i class="fas fa-spray-can text-2xl text-brand-gold service-icon"></i></div><h4 class="text-xl font-bold text-white mb-3 font-serif">Hair Coloring & Tints</h4><p class="text-gray-400 mb-4 line-clamp-3">Professional hair coloring, grey blending, and highlights using premium, ammonia-free products that protect your hair.</p></div><div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group"><div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition"><i class="fas fa-smile text-2xl text-brand-gold service-icon"></i></div><h4 class="text-xl font-bold text-white mb-3 font-serif">Facials & Skincare</h4><p class="text-gray-400 mb-4 line-clamp-3">Rejuvenating cleansing facials, blackhead removal, and detan packs specifically formulated for men's skin.</p></div><div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group"><div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition"><i class="fas fa-gem text-2xl text-brand-gold service-icon"></i></div><h4 class="text-xl font-bold text-white mb-3 font-serif">Groom Packages</h4><p class="text-gray-400 mb-4 line-clamp-3">Comprehensive pre-wedding grooming packages ensuring you look flawless for your big day, from head to toe.</p></div></div></div></section>
-<section id="stats" class="py-20 border-y border-gray-800 bg-brand-dark relative overflow-hidden"><div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#d97706 1px, transparent 1px); background-size: 30px 30px;"></div><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"><div class="p-4"><div class="text-4xl md:text-5xl font-bold text-brand-gold mb-2 font-serif"><span class="stat-counter" data-target="1500">0</span>+</div><div class="text-gray-400 font-medium uppercase tracking-wider text-sm">Happy Clients</div></div><div class="p-4"><div class="text-4xl md:text-5xl font-bold text-brand-gold mb-2 font-serif"><span class="stat-counter" data-target="10">0</span>+</div><div class="text-gray-400 font-medium uppercase tracking-wider text-sm">Years Experience</div></div><div class="p-4"><div class="text-4xl md:text-5xl font-bold text-brand-gold mb-2 font-serif"><span class="stat-counter" data-target="15">0</span>+</div><div class="text-gray-400 font-medium uppercase tracking-wider text-sm">Expert Stylists</div></div><div class="p-4"><div class="text-4xl md:text-5xl font-bold text-brand-gold mb-2 font-serif"><span class="stat-counter" data-target="50">0</span>+</div><div class="text-gray-400 font-medium uppercase tracking-wider text-sm">Premium Services</div></div></div></div></section>
-<section id="testimonials" class="py-24 bg-brand-light"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center max-w-3xl mx-auto mb-16"><h2 class="text-brand-gold font-semibold tracking-widest uppercase mb-2">Social Proof</h2><h3 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Words From Our Gentlemen</h3></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-brand-dark p-8 rounded-xl relative border border-gray-800"><div class="relative z-10"><div class="flex text-brand-gold mb-4 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-300 italic mb-6">"Absolutely the best haircut I've had in years. The attention to detail is unmatched, and the atmosphere is exactly what a modern barbershop should be."</p><div class="flex items-center"><div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold text-white">RA</div><div class="ml-3"><h5 class="text-white font-bold text-sm">Rahul Agarwal</h5><span class="text-gray-500 text-xs">Regular Client</span></div></div></div></div><div class="bg-brand-dark p-8 rounded-xl relative border border-gray-800"><div class="relative z-10"><div class="flex text-brand-gold mb-4 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-300 italic mb-6">"Got my pre-wedding grooming done here. They took incredible care of me. The facial and the styling made me feel a million bucks for my big day."</p><div class="flex items-center"><div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold text-white">VS</div><div class="ml-3"><h5 class="text-white font-bold text-sm">Vikram Singh</h5><span class="text-gray-500 text-xs">Groom</span></div></div></div></div><div class="bg-brand-dark p-8 rounded-xl relative border border-gray-800"><div class="relative z-10"><div class="flex text-brand-gold mb-4 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p class="text-gray-300 italic mb-6">"Professional, clean, and highly skilled staff. They don't rush the process and genuinely listen to what you want. Highly recommend the beard spa."</p><div class="flex items-center"><div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold text-white">MK</div><div class="ml-3"><h5 class="text-white font-bold text-sm">Mohit Kumar</h5><span class="text-gray-500 text-xs">Local Guide</span></div></div></div></div></div></div></section>
-<section class="py-16 bg-brand-gold relative overflow-hidden"><div class="absolute -right-20 -top-20 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl"></div><div class="absolute -left-20 -bottom-20 w-64 h-64 bg-black opacity-10 rounded-full blur-3xl"></div><div class="max-w-4xl mx-auto px-4 text-center relative z-10"><h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-4">Ready to Upgrade Your Look?</h2><p class="text-white/90 text-lg mb-8">Skip the wait. Reserve your chair today and experience grooming excellence.</p><a href="#contact" class="inline-block bg-brand-dark text-white px-8 py-4 rounded font-bold hover:bg-black transition duration-300 shadow-xl">Book Your Slot Now</a></div></section>
-<section id="contact" class="py-24 bg-brand-dark"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 lg:grid-cols-2 gap-16"><div><h2 class="text-brand-gold font-semibold tracking-widest uppercase mb-2">Get in Touch</h2><h3 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Visit Yuvraj Parlor</h3><p class="text-gray-400 mb-10 text-lg">Whether you need a quick trim or a complete makeover, we're here for you. Drop by or schedule an appointment to secure your spot.</p><div class="space-y-8"><a href="https://maps.google.com/?q=Raipur,+Chhattisgarh" target="_blank" class="flex items-start group cursor-pointer"><div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0 border border-gray-700 group-hover:border-brand-gold transition duration-300"><i class="fas fa-map-marker-alt text-brand-gold text-xl group-hover:scale-110 transition duration-300"></i></div><div class="ml-4"><h4 class="text-white font-bold text-xl mb-1 group-hover:text-brand-gold transition duration-300">Our Location</h4><p class="text-gray-400">123 Grooming Street, Elite Avenue<br>City Center, Raipur, CG</p></div></a><div class="flex items-start"><div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0 border border-gray-700"><i class="fas fa-clock text-brand-gold text-xl"></i></div><div class="ml-4"><h4 class="text-white font-bold text-xl mb-1">Working Hours</h4><p class="text-gray-400">Tue - Sun: 9:00 AM - 9:00 PM<br><span class="text-brand-gold">Monday: Closed</span></p></div></div><div class="flex items-start"><div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0 border border-gray-700"><i class="fas fa-phone-alt text-brand-gold text-xl"></i></div><div class="ml-4"><h4 class="text-white font-bold text-xl mb-1">Call Us</h4><a href="tel:+919876543210" class="text-gray-400 hover:text-brand-gold transition text-lg">+91 98765 43210</a></div></div></div></div><div class="bg-brand-light p-8 md:p-10 rounded-2xl border border-gray-700 shadow-2xl relative"><div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold opacity-10 rounded-bl-full"></div><h3 class="font-serif text-3xl font-bold text-white mb-2">Fastest Way to Book</h3><p class="text-gray-400 mb-8">Send us a message on WhatsApp with your preferred date, time, and service required. We'll confirm within minutes.</p><div class="bg-brand-dark rounded-xl p-6 border border-gray-800 mb-8"><p class="text-sm text-gray-500 mb-2 uppercase font-semibold">Example Message:</p><p class="text-gray-300 italic font-serif">"Hi, I'd like to book a Haircut & Beard Trim for tomorrow at 5:00 PM. My name is [Your Name]."</p></div><div class="space-y-4"><a href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Yuvraj%20Mens%20Parlor." target="_blank" class="w-full flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 focus:ring-offset-brand-light transition shadow-lg shadow-green-900/50"><i class="fab fa-whatsapp text-2xl mr-3"></i> Message on WhatsApp</a><div class="relative flex items-center py-2"><div class="flex-grow border-t border-gray-700"></div><span class="flex-shrink-0 mx-4 text-gray-500 text-sm uppercase">Or</span><div class="flex-grow border-t border-gray-700"></div></div><a href="tel:+919876543210" class="w-full flex items-center justify-center px-6 py-4 border border-gray-600 text-lg font-medium rounded-md text-white hover:bg-gray-800 transition"><i class="fas fa-phone text-xl mr-3 text-brand-gold"></i> Call to Book</a></div></div></div><div class="mt-16 bg-brand-light p-2 rounded-2xl border border-gray-800 shadow-2xl relative"><div class="absolute -top-4 left-6 bg-brand-gold text-white px-5 py-1.5 rounded-full text-sm font-bold shadow-lg z-10 flex items-center"><i class="fas fa-map-marked-alt mr-2"></i> Find Us Here</div><div class="w-full h-80 rounded-xl overflow-hidden bg-gray-900"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119066.41709437563!2d81.56157125!3d21.2619639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dda23be28229%3A0x163ee1204ff9e240!2sRaipur%2C%20Chhattisgarh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; filter: contrast(1.1) opacity(0.9);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></div></section>
-<footer class="bg-[#080b12] pt-16 pb-8 border-t border-gray-800"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"><div><a href="#home" class="font-serif text-2xl font-bold tracking-wider text-white inline-block mb-6">YUVRAJ <span class="text-brand-gold">PARLOR</span></a><p class="text-gray-500 text-sm leading-relaxed mb-6">Premium grooming for the modern gentleman. We take pride in delivering meticulous haircuts, sharp shaves, and top-tier customer service.</p></div><div><h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Company</h4><ul class="space-y-3 text-sm"><li><a href="#home" class="text-gray-500 hover:text-brand-gold transition">Home</a></li><li><a href="#about" class="text-gray-500 hover:text-brand-gold transition">About Us</a></li><li><a href="#services" class="text-gray-500 hover:text-brand-gold transition">Our Services</a></li><li><a href="#testimonials" class="text-gray-500 hover:text-brand-gold transition">Reviews</a></li></ul></div><div><h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Services</h4><ul class="space-y-3 text-sm"><li><span class="text-gray-500 hover:text-brand-gold transition cursor-pointer">Hair Styling</span></li><li><span class="text-gray-500 hover:text-brand-gold transition cursor-pointer">Beard Grooming</span></li><li><span class="text-gray-500 hover:text-brand-gold transition cursor-pointer">Facial Treatments</span></li><li><span class="text-gray-500 hover:text-brand-gold transition cursor-pointer">Wedding Packages</span></li></ul></div><div><h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Legal</h4><ul class="space-y-3 text-sm"><li><a href="#" class="text-gray-500 hover:text-white transition">Privacy Policy</a></li><li><a href="#" class="text-gray-500 hover:text-white transition">Terms of Service</a></li><li><a href="#" class="text-gray-500 hover:text-white transition">Cancellation Policy</a></li></ul></div></div><div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"><p class="text-gray-600 text-sm mb-4 md:mb-0">&copy; 2026 Yuvraj Men's Parlor. All rights reserved.</p><p class="text-gray-600 text-sm">Designed with precision.</p></div></div></footer>
-<style>@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }</style>
-<script>document.addEventListener('DOMContentLoaded',()=>{const btn=document.getElementById('mobile-menu-btn');const menu=document.getElementById('mobile-menu');const mobileLinks=document.querySelectorAll('.mobile-link');btn.addEventListener('click',()=>{menu.classList.toggle('hidden');});mobileLinks.forEach(link=>{link.addEventListener('click',()=>{menu.classList.add('hidden');});});const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>{if(window.scrollY>20){navbar.classList.add('shadow-lg','border-b','border-gray-800');navbar.classList.remove('bg-brand-dark/95');navbar.classList.add('bg-brand-dark');}else{navbar.classList.remove('shadow-lg','bg-brand-dark');navbar.classList.add('bg-brand-dark/95');}});const counters=document.querySelectorAll('.stat-counter');let hasCounted=false;const animateCounters=()=>{counters.forEach(counter=>{const target=+counter.getAttribute('data-target');const duration=2000;const increment=target/(duration/16);let current=0;const updateCounter=()=>{current+=increment;if(current<target){counter.innerText=Math.ceil(current);requestAnimationFrame(updateCounter);}else{counter.innerText=target;}};updateCounter();});};const statsSection=document.getElementById('stats');if(statsSection){const observer=new IntersectionObserver((entries)=>{if(entries[0].isIntersecting&&!hasCounted){animateCounters();hasCounted=true;}},{threshold:0.5});observer.observe(statsSection);}});</script>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-dark/95 backdrop-blur-sm border-b border-gray-800" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="font-serif text-2xl font-bold tracking-wider text-white">
+                        YUVRAJ <span class="text-brand-gold">PARLOR</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-brand-gold transition px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-brand-gold transition px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#services" class="text-gray-300 hover:text-brand-gold transition px-3 py-2 text-sm font-medium">Services</a>
+                    <a href="#testimonials" class="text-gray-300 hover:text-brand-gold transition px-3 py-2 text-sm font-medium">Reviews</a>
+                    <a href="#contact" class="bg-brand-gold hover:bg-brand-goldhover text-white px-5 py-2.5 rounded-md font-medium transition duration-300 ease-in-out transform hover:-translate-y-0.5">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-light border-b border-gray-700 absolute w-full left-0 top-20 shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="mobile-link block px-3 py-3 text-base font-medium text-gray-300 hover:text-brand-gold hover:bg-brand-dark rounded-md">Home</a>
+                <a href="#about" class="mobile-link block px-3 py-3 text-base font-medium text-gray-300 hover:text-brand-gold hover:bg-brand-dark rounded-md">About</a>
+                <a href="#services" class="mobile-link block px-3 py-3 text-base font-medium text-gray-300 hover:text-brand-gold hover:bg-brand-dark rounded-md">Services</a>
+                <a href="#testimonials" class="mobile-link block px-3 py-3 text-base font-medium text-gray-300 hover:text-brand-gold hover:bg-brand-dark rounded-md">Reviews</a>
+                <a href="#contact" class="mobile-link block px-3 py-3 mt-4 text-base font-medium text-center bg-brand-gold text-white rounded-md">Book Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center pt-20">
+        <div class="text-center px-4 max-w-4xl mx-auto" style="opacity: 0; animation: fadeIn 1s ease-out forwards;">
+            <p class="text-brand-gold font-semibold tracking-widest uppercase mb-4 text-sm md:text-base">Mastering the Art of Grooming</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Refine Your Style at <br/><span class="text-brand-gold">Yuvraj Men's Parlor</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+                Premium grooming, classic cuts, and modern styling tailored for the modern man. Experience craftsmanship you can trust.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#services" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white rounded transition duration-300 text-lg font-medium">
+                    Explore Services
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-brand-gold hover:bg-brand-goldhover text-white rounded transition duration-300 text-lg font-medium shadow-lg shadow-brand-gold/30">
+                    <i class="fab fa-whatsapp mr-2"></i> Book via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 border-2 border-brand-gold/30 rounded-lg transform translate-x-4 translate-y-4"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800" alt="Barber at work" class="relative rounded-lg shadow-2xl z-10 w-full object-cover h-[500px]">
+                </div>
+                <div>
+                    <h2 class="text-brand-gold font-semibold tracking-widest uppercase mb-2">Our Story</h2>
+                    <h3 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Where Tradition Meets Modern Flair.</h3>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        At Yuvraj Men's Parlor, we don't just cut hair; we craft confidence. Founded with a passion for precise grooming and exceptional service, we blend classic barbering techniques with contemporary styling trends.
+                    </p>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Our team of expert stylists treats every client as a canvas, ensuring you walk out looking sharp and feeling your absolute best. We speak like trusted experts, prioritizing your personal style above all else.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-1 bg-brand-gold"></div>
+                        <p class="text-white font-serif text-xl italic">"Sharp looks for sharp minds."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-gold font-semibold tracking-widest uppercase mb-2">What We Offer</h2>
+                <h3 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Premium Grooming Services</h3>
+                <p class="text-gray-400 text-lg">Detailed attention and expert execution for all your grooming needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition">
+                        <i class="fas fa-cut text-2xl text-brand-gold service-icon"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-serif">Classic & Modern Haircuts</h4>
+                    <p class="text-gray-400 mb-4 line-clamp-3">From timeless traditional cuts to the latest fades and textured styles, customized perfectly for your head shape and hair type.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition">
+                        <i class="fas fa-magic text-2xl text-brand-gold service-icon"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-serif">Beard Trimming & Shaping</h4>
+                    <p class="text-gray-400 mb-4 line-clamp-3">Precision beard sculpting, hot towel straight razor shaves, and line-ups to keep your facial hair looking sharp and healthy.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition">
+                        <i class="fas fa-spa text-2xl text-brand-gold service-icon"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-serif">Head Massage & Spa</h4>
+                    <p class="text-gray-400 mb-4 line-clamp-3">Relaxing head, neck, and shoulder massages designed to relieve stress, paired with deep-conditioning hair spa treatments.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition">
+                        <i class="fas fa-spray-can text-2xl text-brand-gold service-icon"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-serif">Hair Coloring & Tints</h4>
+                    <p class="text-gray-400 mb-4 line-clamp-3">Professional hair coloring, grey blending, and highlights using premium, ammonia-free products that protect your hair.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition">
+                        <i class="fas fa-smile text-2xl text-brand-gold service-icon"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-serif">Facials & Skincare</h4>
+                    <p class="text-gray-400 mb-4 line-clamp-3">Rejuvenating cleansing facials, blackhead removal, and detan packs specifically formulated for men's skin.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-gold/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-brand-light rounded-lg flex items-center justify-center mb-6 border border-gray-700 group-hover:bg-brand-gold/10 transition">
+                        <i class="fas fa-gem text-2xl text-brand-gold service-icon"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-serif">Groom Packages</h4>
+                    <p class="text-gray-400 mb-4 line-clamp-3">Comprehensive pre-wedding grooming packages ensuring you look flawless for your big day, from head to toe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-20 border-y border-gray-800 bg-brand-dark relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#d97706 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-brand-gold mb-2 font-serif"><span class="stat-counter" data-target="1500">0</span>+</div>
+                    <div class="text-gray-400 font-medium uppercase tracking-wider text-sm">Happy Clients</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-brand-gold mb-2 font-serif"><span class="stat-counter" data-target="10">0</span>+</div>
+                    <div class="text-gray-400 font-medium uppercase tracking-wider text-sm">Years Experience</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-brand-gold mb-2 font-serif"><span class="stat-counter" data-target="15">0</span>+</div>
+                    <div class="text-gray-400 font-medium uppercase tracking-wider text-sm">Expert Stylists</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-brand-gold mb-2 font-serif"><span class="stat-counter" data-target="50">0</span>+</div>
+                    <div class="text-gray-400 font-medium uppercase tracking-wider text-sm">Premium Services</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Testimonials -->
+    <section id="testimonials" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-gold font-semibold tracking-widest uppercase mb-2">Social Proof</h2>
+                <h3 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Words From Our Gentlemen</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-brand-dark p-8 rounded-xl relative border border-gray-800">
+                    <i class="fas fa-quote-left text-4xl text-brand-gold/20 absolute top-6 left-6"></i>
+                    <div class="relative z-10">
+                        <div class="flex text-brand-gold mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic mb-6">"Absolutely the best haircut I've had in years. The attention to detail is unmatched, and the atmosphere is exactly what a modern barbershop should be."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold text-white">RA</div>
+                            <div class="ml-3">
+                                <h5 class="text-white font-bold text-sm">Rahul Agarwal</h5>
+                                <span class="text-gray-500 text-xs">Regular Client</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-brand-dark p-8 rounded-xl relative border border-gray-800">
+                    <i class="fas fa-quote-left text-4xl text-brand-gold/20 absolute top-6 left-6"></i>
+                    <div class="relative z-10">
+                        <div class="flex text-brand-gold mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic mb-6">"Got my pre-wedding grooming done here. They took incredible care of me. The facial and the styling made me feel a million bucks for my big day."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold text-white">VS</div>
+                            <div class="ml-3">
+                                <h5 class="text-white font-bold text-sm">Vikram Singh</h5>
+                                <span class="text-gray-500 text-xs">Groom</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-brand-dark p-8 rounded-xl relative border border-gray-800">
+                    <i class="fas fa-quote-left text-4xl text-brand-gold/20 absolute top-6 left-6"></i>
+                    <div class="relative z-10">
+                        <div class="flex text-brand-gold mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="text-gray-300 italic mb-6">"Professional, clean, and highly skilled staff. They don't rush the process and genuinely listen to what you want. Highly recommend the beard spa."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center font-bold text-white">MK</div>
+                            <div class="ml-3">
+                                <h5 class="text-white font-bold text-sm">Mohit Kumar</h5>
+                                <span class="text-gray-500 text-xs">Local Guide</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-16 bg-brand-gold relative overflow-hidden">
+        <!-- Abstract shape -->
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl"></div>
+        <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-black opacity-10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-4">Ready to Upgrade Your Look?</h2>
+            <p class="text-white/90 text-lg mb-8">Skip the wait. Reserve your chair today and experience grooming excellence.</p>
+            <a href="#contact" class="inline-block bg-brand-dark text-white px-8 py-4 rounded font-bold hover:bg-black transition duration-300 shadow-xl">
+                Book Your Slot Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-brand-gold font-semibold tracking-widest uppercase mb-2">Get in Touch</h2>
+                    <h3 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Visit Yuvraj Parlor</h3>
+                    <p class="text-gray-400 mb-10 text-lg">Whether you need a quick trim or a complete makeover, we're here for you. Drop by or schedule an appointment to secure your spot.</p>
+                    
+                    <div class="space-y-8">
+                        <!-- Location -->
+                        <a href="https://maps.google.com/?q=Raipur,+Chhattisgarh" target="_blank" class="flex items-start group cursor-pointer">
+                            <div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0 border border-gray-700 group-hover:border-brand-gold transition duration-300">
+                                <i class="fas fa-map-marker-alt text-brand-gold text-xl group-hover:scale-110 transition duration-300"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-bold text-xl mb-1 group-hover:text-brand-gold transition duration-300">Our Location</h4>
+                                <p class="text-gray-400">123 Grooming Street, Elite Avenue<br>City Center, Raipur, CG</p>
+                            </div>
+                        </a>
+                        
+                        <!-- Hours -->
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0 border border-gray-700">
+                                <i class="fas fa-clock text-brand-gold text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-bold text-xl mb-1">Working Hours</h4>
+                                <p class="text-gray-400">Tue - Sun: 9:00 AM - 9:00 PM<br><span class="text-brand-gold">Monday: Closed</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Direct Contact -->
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0 border border-gray-700">
+                                <i class="fas fa-phone-alt text-brand-gold text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-bold text-xl mb-1">Call Us</h4>
+                                <a href="tel:+919876543210" class="text-gray-400 hover:text-brand-gold transition text-lg">+91 98765 43210</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Card (WhatsApp focus) -->
+                <div class="bg-brand-light p-8 md:p-10 rounded-2xl border border-gray-700 shadow-2xl relative">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold opacity-10 rounded-bl-full"></div>
+                    
+                    <h3 class="font-serif text-3xl font-bold text-white mb-2">Fastest Way to Book</h3>
+                    <p class="text-gray-400 mb-8">Send us a message on WhatsApp with your preferred date, time, and service required. We'll confirm within minutes.</p>
+                    
+                    <div class="bg-brand-dark rounded-xl p-6 border border-gray-800 mb-8">
+                        <p class="text-sm text-gray-500 mb-2 uppercase font-semibold">Example Message:</p>
+                        <p class="text-gray-300 italic font-serif">"Hi, I'd like to book a Haircut & Beard Trim for tomorrow at 5:00 PM. My name is [Your Name]."</p>
+                    </div>
+
+                    <!-- Replace standard form with direct WhatsApp Action -->
+                    <div class="space-y-4">
+                        <a href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Yuvraj%20Mens%20Parlor." target="_blank" class="w-full flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 focus:ring-offset-brand-light transition shadow-lg shadow-green-900/50">
+                            <i class="fab fa-whatsapp text-2xl mr-3"></i> Message on WhatsApp
+                        </a>
+                        <div class="relative flex items-center py-2">
+                            <div class="flex-grow border-t border-gray-700"></div>
+                            <span class="flex-shrink-0 mx-4 text-gray-500 text-sm uppercase">Or</span>
+                            <div class="flex-grow border-t border-gray-700"></div>
+                        </div>
+                        <a href="tel:+919876543210" class="w-full flex items-center justify-center px-6 py-4 border border-gray-600 text-lg font-medium rounded-md text-white hover:bg-gray-800 transition">
+                            <i class="fas fa-phone text-xl mr-3 text-brand-gold"></i> Call to Book
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Maps Integration -->
+            <div class="mt-16 bg-brand-light p-2 rounded-2xl border border-gray-800 shadow-2xl relative">
+                <div class="absolute -top-4 left-6 bg-brand-gold text-white px-5 py-1.5 rounded-full text-sm font-bold shadow-lg z-10 flex items-center">
+                    <i class="fas fa-map-marked-alt mr-2"></i> Find Us Here
+                </div>
+                <div class="w-full h-80 rounded-xl overflow-hidden bg-gray-900">
+                    <!-- Replace the 'src' attribute below with your actual Google Maps Embed URL -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119066.41709437563!2d81.56157125!3d21.2619639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dda23be28229%3A0x163ee1204ff9e240!2sRaipur%2C%20Chhattisgarh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: contrast(1.1) opacity(0.9);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#080b12] pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1: Brand -->
+                <div>
+                    <a href="#home" class="font-serif text-2xl font-bold tracking-wider text-white inline-block mb-6">
+                        YUVRAJ <span class="text-brand-gold">PARLOR</span>
+                    </a>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Premium grooming for the modern gentleman. We take pride in delivering meticulous haircuts, sharp shaves, and top-tier customer service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="text-gray-500 hover:text-brand-gold transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-500 hover:text-brand-gold transition">About Us</a></li>
+                        <li><a href="#services" class="text-gray-500 hover:text-brand-gold transition">Our Services</a></li>
+                        <li><a href="#testimonials" class="text-gray-500 hover:text-brand-gold transition">Reviews</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><span class="text-gray-500 hover:text-brand-gold transition cursor-pointer">Hair Styling</span></li>
+                        <li><span class="text-gray-500 hover:text-brand-gold transition cursor-pointer">Beard Grooming</span></li>
+                        <li><span class="text-gray-500 hover:text-brand-gold transition cursor-pointer">Facial Treatments</span></li>
+                        <li><span class="text-gray-500 hover:text-brand-gold transition cursor-pointer">Wedding Packages</span></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Legal -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Legal</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-gray-500 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-white transition">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-sm mb-4 md:mb-0">
+                    &copy; 2026 Yuvraj Men's Parlor. All rights reserved.
+                </p>
+                <p class="text-gray-600 text-sm">
+                    Designed with precision.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CSS Animation keyframes for elements -->
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <!-- Interactions Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+
+            // 2. Sticky Navbar styling on scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-lg', 'border-b', 'border-gray-800');
+                    navbar.classList.remove('bg-brand-dark/95');
+                    navbar.classList.add('bg-brand-dark');
+                } else {
+                    navbar.classList.remove('shadow-lg', 'bg-brand-dark');
+                    navbar.classList.add('bg-brand-dark/95');
+                }
+            });
+
+            // 3. Stats Counter Animation using Intersection Observer
+            const counters = document.querySelectorAll('.stat-counter');
+            let hasCounted = false;
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000; // ms
+                    const increment = target / (duration / 16); // 60fps
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCounter();
+                });
+            };
+
+            const observerOptions = {
+                threshold: 0.5
+            };
+
+            const statsSection = document.getElementById('stats');
+            if (statsSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting && !hasCounted) {
+                        animateCounters();
+                        hasCounted = true;
+                    }
+                }, observerOptions);
+
+                observer.observe(statsSection);
+            }
+        });
+    </script>
 </body>
 </html>
